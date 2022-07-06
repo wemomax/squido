@@ -26,7 +26,7 @@ const config = {
         name: 'DDS',
         description: 'Desenvolvimento Distribuído de Software',
         twitterHandle: '@welington',
-        baseUrl: 'https://wemomax.github.io/squido',
+        baseUrl: 'https://wemomax.github.io',
         sourcesExt: 'markdown',
         sourceDir: 'source',
         buildDir: 'docs',
