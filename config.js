@@ -28,6 +28,8 @@ const config = {
         twitterHandle: '@welington',
         baseUrl: 'https://wemomax.github.io/squido',
         sourcesExt: 'markdown',
+        sourceDir: 'source',
+        buildDir: 'docs',
         summaryLength: 250,
         port: 4965,
         pagination: true,
