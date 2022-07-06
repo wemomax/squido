@@ -29,7 +29,7 @@ const config = {
         baseUrl: 'https://wemomax.github.io/squido',
         sourcesExt: 'markdown',
         sourceDir: 'source',
-        buildDir: 'docs',
+        buildDir: 'build',
         summaryLength: 250,
         port: 4965,
         pagination: true,
