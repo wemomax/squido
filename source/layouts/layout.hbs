@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {{#if meta.title}}
+    <title>{{meta.title}}</title>
+    <meta property="og:title" content="{{meta.title}}" />
+    <meta name="twitter:title" content="{{meta.title}}" />
+    <meta name="description" content="{{meta.description}}" />
+    <meta property="og:description" content="{{meta.description}}" />
+    <meta name="twitter:description" content="{{meta.description}}" />
+    {{else}}
+    {{#if page}}
+    <title>{{config.name}} - Page: {{page}}</title>
+    <meta property="og:title" content="{{config.name}} - Page: {{page}}" />
+    <meta name="twitter:title" content="{{config.name}} - Page: {{page}}" />
+    <meta name="description" content="{{config.name}} - Page: {{page}}" />
+    <meta property="og:description" content="{{config.name}} - Page: {{page}}" />
+    <meta name="twitter:description" content="{{config.name}} - Page: {{page}}" />
+    {{/if}}
+    {{#if tag}}
+    <title>{{config.name}} - Tag: {{tag}}</title>
+    <meta property="og:title" content="{{config.name}} - Tag: {{tag}}" />
+    <meta name="twitter:title" content="{{config.name}} - Tag: {{tag}}" />
+    <meta name="description" content="{{config.name}} - Posts containing tag: {{tag}}" />
+    <meta property="og:description" content="{{config.name}} - Posts containing tag: {{tag}}" />
+    <meta name="twitter:description" content="{{config.name}} - Posts containing tag: {{tag}}" />
+    {{/if}}
+    {{/if}}
+    <link rel="canonical" href="{{meta.url}}" />
+    <link rel="icon" type="image/png" href="{{config.baseUrl}}/content/images/favicon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{meta.url}}" />
+    <meta property="og:site_name" content="{{config.name}}" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="{{meta.url}}" />
+    {{#if meta.image}}
+    <meta name="twitter:image" content="<{{meta.image}}" />
+    {{/if}}
+    {{#if config.twitterHandle}}
+    <meta name="twitter:site" content="{{config.twitterHandle}}" />
+    {{/if}}
+    <link rel="alternate" type="application/rss+xml" href="{{config.baseUrl}}/rss" />
+    <link rel="alternate" type="application/atom+xml" href="{{config.baseUrl}}/atom" />
+    <link rel="alternate" type="application/json" href="{{config.baseUrl}}/json" />
+	<link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/css/bootstrap.min.css" integrity="sha512-aqT9YD5gLuLBr6ipQAS+72o5yHKzgZbGxEh6iY8lW/r6gG14e2kBTAJb8XrxzZrMOgSmDqtLaF76T0Z6YY2IHg==" crossorigin="anonymous" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FlexSearch/0.6.22/flexsearch.min.js" integrity="sha512-KxRyF5OGyocY7+bOecICRkukb/F8P8yFO/86j3TZ8zxzL5nieFBJFFk0sd5aj387UfSOcSan4FJ86+ydH50nsw==" crossorigin="anonymous"></script>
+    <script src="/content/javascripts/searchdata.js"></script>
+    <link rel="stylesheet" href="/content/stylesheets/style{{config.fileEnv}}.css">
+    <script src="/content/javascripts/site{{config.fileEnv}}.js"></script>
+  </head>
+  <body>
+	<div class="site-wrapper">
+		<div class="container">
+			<ul class="nav justify-content-center">
+				<li class="nav-item">
+					<img src="/content/images/squido.svg" alt="squido logo" width="40" height="40" class="d-inline-block">
+					<span class="fs-4"><a class="nav-name-link" href="/">{{config.name}}</a></span>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/tag/setup"><i class="lni lni-files"></i> Setup</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/tag/customizing"><i class="lni lni-pencil"></i> Customizing</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/tag/extending"><i class="lni lni-plug"></i> Extending</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/tag/hosting"><i class="lni lni-database"></i> Hosting</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<section class="site-title no-image">
+		<div class="container">
+			<div class="hero-content">
+				<h1 class="site-name">{{config.name}}</h1>
+				<h2 class="site-description">{{config.description}}</h2>
+			</div>
+			<div class="hero-search">
+				<div class="search">
+					<form class="search-form" onsubmit="return false">
+						<i class="search-icon fas fa-search"></i>
+						<input type="text" id="search-input" placeholder="Type your keywords...">
+					</form>
+					<ul id="search-results" class="list-group" style="z-index: 999; position: absolute; width: 100%;"></ul>
+				</div>
+			</div>
+		</div>
+	</section>
+    <main class="container">
+      {{{body}}}
+    </main>
+    <footer class="footer mt-5 py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">Powered by <a href="https://squido.org">squido</a></span>
+        </div>
+    </footer>
+  </body>
+</html>
